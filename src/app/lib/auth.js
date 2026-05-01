@@ -5,9 +5,9 @@ import { mongodbAdapter } from "better-auth/adapters/mongodb";
 const client = new MongoClient(process.env.MONGODB_URI);
 const db = client.db("tofazzal_auth");
 export const auth = betterAuth({
-  database: mongodbAdapter( db,{
-    client
-  }
-
-  )
+  database: mongodbAdapter(db,{client}),
+  emailAndPassword: {
+    enabled: true,
+  },
+  
 });
