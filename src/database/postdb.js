@@ -18,8 +18,10 @@ const posts = [
 ]
 
 
-const addPosts = (newPost) => {
+export const addPosts = (newPost) => {
     posts.push(newPost)
+    
+    
 }
 
 export const getPosts = () =>{

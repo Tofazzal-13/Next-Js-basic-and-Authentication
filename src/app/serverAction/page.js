@@ -1,5 +1,5 @@
-import { getPosts } from '@/database/postdb';
-import React from 'react';
+import {  getPosts } from '@/database/postdb';
+
 import { FloppyDisk } from "@gravity-ui/icons";
 import {
     Button,
@@ -14,12 +14,16 @@ import {
     TextField,
 } from "@heroui/react";
 
+import { handlePostAction } from '@/action/postAction';
+
 const ServerActionPage = () => {
     const posts = getPosts()
-    return (
-        <div>
 
-            <Form className="w-full max-w-96 mx-auto border rounded-lg p-3 my-10" >
+    
+    return (
+        <div className='container mx-auto'>
+
+            <Form action={handlePostAction} className="max-w-96 mx-auto border rounded-lg p-3 my-10" >
                 <Fieldset>
                     <Fieldset.Legend>Add post</Fieldset.Legend>
                     <Description>Update your profile information.</Description>
