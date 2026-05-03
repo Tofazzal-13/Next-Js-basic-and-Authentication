@@ -11,14 +11,16 @@ const Navbar = () => {
 
     console.log(session);
     
+    const user = session?.user
+   
+    
 
     const handleSignOut = () => {
         authClient.signOut()
     }
     return (
-        <div className="border p-5 bg-zinc-300
-        ">
-            <div className="flex gap-5 justify-center items-center">
+
+            <div className="flex gap-5 justify-center items-center bg-gray-300 py-6 font-semibold">
                 <li>
                     <Link href={"/"}>Home</Link>
                 </li>
@@ -31,13 +33,15 @@ const Navbar = () => {
                 <li>
                     <Link href={"/signin"}>SignIn</Link>
                 </li>
-
                <Button onClick={handleSignOut} variant="danger">SignOut</Button>
+                <li className="text-blue-700 text-xs">
+                    {user?.name}
+                </li>
 
 
             </div>
 
-        </div>
+       
     );
 };
 
