@@ -9,11 +9,9 @@ const Navbar = () => {
         data: session, 
     } = authClient.useSession() 
 
-    console.log(session);
     
     const user = session?.user
    
-    
 
     const handleSignOut = () => {
         authClient.signOut()
@@ -27,6 +25,10 @@ const Navbar = () => {
                 <li>
                     <Link href={"/models"}>Model</Link>
                 </li>
+                <li>
+                    <Link href={"/serverAction"}>ServerAction</Link>
+                </li>
+
                 <li>
                     <Link href={"/signup"}>SignUp</Link>
                 </li>
